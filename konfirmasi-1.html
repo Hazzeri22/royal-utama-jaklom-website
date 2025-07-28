@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Konfirmasi Pemesanan - Royal Utama Jaklom</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #0077b6, #00b4d8);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .confirm-container {
+      background-color: #fff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      width: 400px;
+      text-align: center;
+    }
+
+    .confirm-container h1 {
+      color: #0077b6;
+      margin-bottom: 10px;
+    }
+
+    .confirm-container h2 {
+      color: #023e8a;
+      margin-bottom: 25px;
+    }
+
+    .confirm-container input,
+    .confirm-container select,
+    .confirm-container textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #90e0ef;
+      border-radius: 6px;
+      background-color: #f1f9ff;
+      font-size: 14px;
+    }
+
+    .confirm-container input[type="submit"] {
+      background-color: #0077b6;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .confirm-container input[type="submit"]:hover {
+      background-color: #005f8e;
+    }
+  </style>
+</head>
+<body>
+  <div class="confirm-container">
+    <h1>Royal Utama Jaklom</h1>
+    <h2>Konfirmasi Pemesanan</h2>
+    <form action="dashboard.html" method="post">
+      <input type="text" name="nama" placeholder="Nama Lengkap" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="text" name="no_pesanan" placeholder="Nomor Pemesanan" required />
+
+      <select name="jenis_layanan" required>
+        <option value="" disabled selected>Pilih Jenis Layanan</option>
+        <option value="paket-domestik.html">Paket Tour Domestik</option>
+        <option value="paket-internasional.html">Paket Tour Internasional</option>
+        <option value="pesan-hotel.html">Pemesanan Hotel</option>
+        <option value="hotel_dalam">Hotel Dalam Negeri</option>
+        <option value="hotel_luar">Hotel Luar Negeri</option>
+      </select>
+
+      <textarea name="catatan" placeholder="Catatan Tambahan (Opsional)" rows="4"></textarea>
+
+      <input type="submit" value="Kirim Konfirmasi" />
+    </form>
+  </div>
+</body>
+</html>

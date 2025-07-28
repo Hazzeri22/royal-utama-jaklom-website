@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konfirmasi Pemesanan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      text-align: center;
+      color: #023e8a;
+    }
+
+    .data-row {
+      margin-bottom: 12px;
+    }
+
+    .data-row strong {
+      color: #0077b6;
+      display: inline-block;
+      width: 160px;
+    }
+
+    .back {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .back a {
+      color: #0077b6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Konfirmasi Pembayaran</h2>
+
+    <div class="data-row"><strong>Nama:</strong> <span id="nama"></span></div>
+    <div class="data-row"><strong>Email:</strong> <span id="email"></span></div>
+    <div class="data-row"><strong>Destinasi/Lokasi:</strong> <span id="tujuan"></span></div>
+    <div class="data-row"><strong>Tanggal:</strong> <span id="tanggal"></span></div>
+    <div class="data-row"><strong>Check-In:</strong> <span id="checkin"></span></div>
+    <div class="data-row"><strong>Check-Out:</strong> <span id="checkout"></span></div>
+    <div class="data-row"><strong>Jumlah Peserta/Tamu:</strong> <span id="jumlah"></span></div>
+
+    <div class="back">
+      <a href="index.html">Kembali ke Beranda</a>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    const getValue = (key) => params.get(key) || '-';
+
+    document.getElementById("nama").innerText = getValue("nama");
+    document.getElementById("email").innerText = getValue("email");
+    
+    // Tujuan bisa dari: destinasi (tour), kota (hotel)
+    document.getElementById("tujuan").innerText = getValue("destinasi") || getValue("kota") || '-';
+
+    // Tanggal bisa dari: tanggal (tour), checkin/checkout (hotel)
+    document.getElementById("tanggal").innerText = getValue("tanggal") || '-';
+    document.getElementById("checkin").innerText = getValue("checkin") || '-';
+    document.getElementById("checkout").innerText = getValue("checkout") || '-';
+
+    document.getElementById("jumlah").innerText = getValue("peserta") || getValue("jumlah") || '-';
+  </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daftar - Royal Utama Jaklom</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #0077b6, #00b4d8);
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .register-container {
+      background-color: #ffffff;
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 360px;
+      text-align: center;
+    }
+
+    .register-container h1 {
+      font-size: 22px;
+      color: #0077b6;
+      margin-bottom: 5px;
+    }
+
+    .register-container h2 {
+      margin-bottom: 20px;
+      font-size: 26px;
+      color: #023e8a;
+    }
+
+    .register-container input[type="text"],
+    .register-container input[type="email"],
+    .register-container input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #90e0ef;
+      border-radius: 6px;
+      background-color: #f1f9ff;
+      color: #000;
+      font-size: 14px;
+    }
+
+    .register-container input::placeholder {
+      color: #888;
+    }
+
+    .register-container input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    .register-container input[type="submit"]:hover {
+      background-color: #005f8e;
+    }
+
+    .login-link {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .login-link a {
+      color: #0077b6;
+      text-decoration: none;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <h1>Royal Utama Jaklom</h1>
+    <h2>Daftar Akun</h2>
+    <body><form onsubmit="redirectLogin(); return false;">
+  <input type="text" name="fullname" placeholder="Nama Lengkap" required />
+  <input type="email" name="email" placeholder="Email" required />
+  <input type="text" name="username" placeholder="Username" required />
+  <input type="password" name="password" placeholder="Password" required />
+  <input type="submit" value="Daftar" />
+</form><script>
+  function redirectLogin() {
+    alert("Pendaftaran berhasil! Anda akan diarahkan ke halaman login.");
+    window.location.href = "login.html";
+  }
+</script>
+</body>
+    <div class="login-link">
+      Sudah punya akun?
+      <a href="login.html">Daftar</a>
+    </div>
+  </div>
+</body>
+</html>
